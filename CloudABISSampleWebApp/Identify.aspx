@@ -6,28 +6,8 @@
 
 <head id="Head1" runat="server">
     <title>Identify</title>
-    <link rel="Stylesheet" type="text/css" href="style.css" />
+    <link rel="Stylesheet" type="text/css" href="Script/Style.css" />
 
-
-    <style type="text/css">
-        .auto-style1 {
-            width: 157px;
-        }
-
-        .auto-style2 {
-            width: 471px;
-        }
-
-        .auto-style3 {
-            width: 376px;
-        }
-
-        .centerBlock {
-            margin-left: auto;
-            margin-right: auto;
-            width: 576px;
-        }
-    </style>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
     <script src="Script/CloudABIS-ScanR.js"></script>
     <script src="Scripts/jquery-1.10.2.js" type="text/javascript"></script>
@@ -113,95 +93,34 @@
     </script>
 </head>
 <body style="background-color: ButtonHighlight">
-    <form id="form1" runat="server">
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <div>
-            <table cellpadding="0px" cellspacing="0px" align="center">
-
-                <tr>
-                    <td class="auto-style3">
-                        <fieldset style="width: 350px;">
-
-                            <table cellpadding="3px" cellspacing="0">
-
-                                <tr>
-                                    <td class="auto-style1">CaptureType
-                                    </td>
-                                    <td>
-
-                                        <select id="captureType">
-                                            <option value="SingleCapture">SingleCapture</option>
-                                            <option value="DoubleCapture">DoubleCapture</option>
-
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="auto-style1">QuickScan
-                                    </td>
-                                    <td>
-                                        <select id="quickScan">
-                                            <option value="Enable">Enable</option>
-                                            <option value="Disable">Disable</option>
-
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="auto-style1">Current Device Name
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lblCurrentDeviceName" runat="server" Text="..."></asp:Label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="button" value="BioMetric Capture" onclick="captureBiometric()" />
-                                    </td>
-                                    <td>
-                                        <asp:Button ID="btnSubmit" runat="server" Text="Identify" Enabled="true" OnClick="btnIdentify_Click" Height="40px" Width="155px" />
-                                    </td>
-                                </tr>
-                                <tr>
-
-                                    <td>
-                                        <fieldset style="width: 350px;">
-                                            <asp:Button ID="Button1" runat="server" Text="Back" OnClick="BtnBack_Click" />
-                                            &nbsp;<asp:Label ID="serverResult" runat="server" Text="..."></asp:Label>
-                                        </fieldset>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <asp:TextBox Width="350px" ID="fileStaveStatus" runat="server" Visible="false" TextMode="MultiLine" Text="Captured Template save at">
-
-                                        </asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <asp:TextBox ID="templateXML" runat="server" CssClass="pagetitleValue" Style="display: none;" TextMode="MultiLine" Text="" Height="263px" Width="663px"></asp:TextBox>
-                                    </td>
-                                </tr>
-                            </table>
-                        </fieldset>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <br />
-        <br />
-        <br />
-
-    </form>
+    <div class="formWrapper">
+        <form id="form1" runat="server" class="commonForm identifyForm">
+            <h1 class="headline">Identity</h1>
+            <div class="mt-10">
+                <label>Capture Type:</label>
+                <select name="captureType" id="captureType">
+                    <option value="SingleCapture">Single Capture</option>
+                    <option value="DoubleCapture">Double Capture</option>
+                </select>
+            </div>
+            <div class="mt-10">
+                <label>Quick Scan:</label>
+                <select name="quickScan" id="quickScan">
+                    <option value="Enable">Enable</option>
+                    <option value="Disable">Disable</option>
+                </select>
+            </div>
+            <div>
+                <label id="lblCurrentDeviceTitle" class="currentDeviceCaption">Current Device Name:</label><asp:Label ID="lblCurrentDeviceName" runat="server" Text="..."></asp:Label>
+                <input type="button" value="BioMetric Capture" onclick="captureBiometric()" />
+                <asp:Button ID="btnSubmit" runat="server" Text="Identify" Enabled="true" OnClick="btnIdentify_Click" Height="40px" />
+                <asp:Button ID="Button1" runat="server" Text="Back" OnClick="BtnBack_Click" />
+                &nbsp;<asp:Label ID="serverResult" runat="server" Text="..."></asp:Label>
+                <asp:TextBox Width="350px" ID="fileStaveStatus" runat="server" Visible="false" TextMode="MultiLine" Text="Captured Template save at"></asp:TextBox>
+                <asp:TextBox ID="templateXML" runat="server" CssClass="pagetitleValue" Style="display: none;" TextMode="MultiLine" Text="" Height="263px" Width="663px"></asp:TextBox>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
 

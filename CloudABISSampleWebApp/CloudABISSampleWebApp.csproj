@@ -120,6 +120,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Script\Style.css" />
     <Content Include="Update.aspx" />
     <Content Include="Verify.aspx" />
     <Content Include="Web.config">
