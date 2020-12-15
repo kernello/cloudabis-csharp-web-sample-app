@@ -44,7 +44,7 @@
             else if (engineName == EnumEngines.FingerVein)
                 FingerVeinCapture(deviceName, quickScan, captureType, 180.0, EnumCaptureOperationName.VERIFY, CaptureResult);
             else if (engineName == EnumEngines.Iris)
-                IrisCapture(deviceName, quickScan, 180.0, EnumFeatureMode.Disable, CaptureResult);
+                IrisCapture(deviceName, 180.0, EnumFeatureMode.Disable, CaptureResult);
             else if (engineName == EnumEngines.Face)
                 FaceCapture(quickScan, 180.0, EnumFeatureMode.Disable, EnumFaceImageFormat.Jpeg, EnumCaptureOperationName.VERIFY, CaptureResult);
         }

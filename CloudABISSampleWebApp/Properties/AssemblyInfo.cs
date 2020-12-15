@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("M2SYS")]
 [assembly: AssemblyProduct("CloudABISSampleWebApp")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCopyright("Copyright ©M2SYS 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("3.1.1")]
-[assembly: AssemblyFileVersion("3.1.1")]
+[assembly: AssemblyVersion("3.5.5")]
+[assembly: AssemblyFileVersion("3.5.5")]

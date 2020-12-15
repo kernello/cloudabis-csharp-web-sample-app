@@ -26,7 +26,8 @@
                 setCookie("CABEngineName", engineName, 7);
                 setCookie("CSTempalteFormat", templateFormat, 7);
 
-                window.location.href = "CloudABISHome.aspx";
+                //window.location.href = "CloudABISHome.aspx";
+                window.open("CloudABISHome.aspx","_self");
             } else {
                 failCall("Please put required values.");
             }
@@ -62,8 +63,10 @@
                     <option value="TwoPrintWatsonMini">TwoPrintWatsonMini</option>
                     <option value="TenPrintWatsonMini">TenPrintWatsonMini</option>
                     <option value="HitachiFV">HitachiFV</option>
-                    <option value="CMitech">CMitech</option>
+                    <option value="EMX30">EMX30</option>
                     <option value="Face">Face</option>
+                    <option value="TD100">TD100</option>
+                    <option value="EF45">EF45</option>
                 </select>
                 <label for="engineName">Engine Name</label>
                 <select id="engineName">
@@ -81,7 +84,7 @@
                     <option value="FP1">FP1</option>
                     <option value="M2ICS">M2ICS</option>
                 </select>
-                <button onclick="javascript:setConfiguration()">Set Active Device</button>
+                <input type="button" value="Set Active Device" onclick="setConfiguration()" />
                 <asp:Button ID="Button1" runat="server" Text="Back" OnClick="BtnBack_Click" />
                 <label id="lblMessage"></label>
             </div>
