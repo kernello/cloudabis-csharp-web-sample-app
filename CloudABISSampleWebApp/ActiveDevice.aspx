@@ -6,27 +6,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head id="Head1" runat="server">
-    <title>CloudScanr Credentails
-    </title>
-
-    <style type="text/css">
-        .auto-style1 {
-            width: 157px;
-        }
-
-        .auto-style2 {
-            width: 471px;
-        }
-
-        .auto-style3 {
-            width: 376px;
-        }
-    </style>
-    <<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+    <title>CloudScanr Credentails</title>
+    <link rel="Stylesheet" type="text/css" href="Script/Style.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
 
     <script type="text/javascript">
         function setConfiguration() {
-
             var engineName = document.getElementById("engineName");
             engineName = engineName.options[engineName.selectedIndex].value;
             var templateFormat = document.getElementById("templateFormat");
@@ -45,7 +30,6 @@
             } else {
                 failCall("Please put required values.");
             }
-
         }
 
         function setCookie(name, value, days) {
@@ -57,112 +41,52 @@
             }
             document.cookie = name + "=" + (value || "") + expires + "; path=/";
         }
+
         function failCall(status) {
-
             document.getElementById('lblMessage').innerHTML = status;
-
-
         }
     </script>
 
-
 </head>
 <body style="background-color: ButtonHighlight">
-    <form id="form1" runat="server">
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <div>
-            <table cellpadding="0px" cellspacing="0px" align="center">
-
-                <tr>
-                    <td class="auto-style3">
-                        <fieldset style="width: 350px;">
-
-                            <table cellpadding="3px" cellspacing="0">
-
-                                <tr>
-                                    <td class="auto-style1">Device Name
-                                    </td>
-                                    <td>
-                                        <select id="deviceName">
-                                            <option value="Secugen">Secugen</option>
-                                            <option value="TwoPrintFutronic">TwoPrintFutronic</option>
-                                            <option value="TenPrintFutronic">TenPrintFutronic</option>
-                                            <option value="DigitalPersona">DigitalPersona</option>
-                                            <option value="TwoPrintWatsonMini">TwoPrintWatsonMini</option>
-                                            <option value="TenPrintWatsonMini">TenPrintWatsonMini</option>
-                                            <option value="HitachiFV">HitachiFV</option>
-                                            <option value="CMitech">CMitech</option>
-                                            <option value="Face">Face</option>
-
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="auto-style1">Engine Name
-                                    </td>
-                                    <td>
-                                        <select id="engineName">
-                                            <option value="FPFF02">FingerPrint</option>
-                                            <option value="FVHT01">FingerVein</option>
-                                            <option value="IRIS01">Iris</option>
-                                            <option value="FACE01">Face</option>
-
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="auto-style1">Template Format
-                                    </td>
-                                    <td>
-                                        <select id="templateFormat">
-                                            <option value="ISO">ISO</option>
-                                            <option value="ICS">ICS</option>
-                                            <option value="ANSI">ANSI</option>
-                                            <option value="FP2">FP2</option>
-                                            <option value="FP1">FP1</option>
-                                            <option value="M2ICS">M2ICS</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="button" value="Set Active Device" onclick="setConfiguration()" />
-                                    </td>
-                                </tr>
-                            </table>
-                        </fieldset>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <br />
-
-        <div>
-
-            <table cellpadding="0px" cellspacing="0px" align="center">
-                <tr>
-
-                    <td>
-                        <fieldset style="width: 350px;">
-                            <asp:Button ID="BtnBack" runat="server" Text="Back" OnClick="BtnBack_Click" />
-                            &nbsp;<asp:Label ID="lblMessage" runat="server" Text="..."></asp:Label>
-                        </fieldset>
-                    </td>
-
-                </tr>
-            </table>
-
-
-        </div>
-
-    </form>
+    <div class="formWrapper">
+        <form id="form1" runat="server">
+            <div class="iholder">
+                <h1 class="headline">Active Device</h1>
+                <label for="deviceName">Device Name</label>
+                <select id="deviceName">
+                    <option value="Secugen">Secugen</option>
+                    <option value="TwoPrintFutronic">TwoPrintFutronic</option>
+                    <option value="TenPrintFutronic">TenPrintFutronic</option>
+                    <option value="DigitalPersona">DigitalPersona</option>
+                    <option value="TwoPrintWatsonMini">TwoPrintWatsonMini</option>
+                    <option value="TenPrintWatsonMini">TenPrintWatsonMini</option>
+                    <option value="HitachiFV">HitachiFV</option>
+                    <option value="CMitech">CMitech</option>
+                    <option value="Face">Face</option>
+                </select>
+                <label for="engineName">Engine Name</label>
+                <select id="engineName">
+                    <option value="FPFF02">FingerPrint</option>
+                    <option value="FVHT01">FingerVein</option>
+                    <option value="IRIS01">Iris</option>
+                    <option value="FACE01">Face</option>
+                </select>
+                <label for="templateFormat">Template Format</label>
+                <select id="templateFormat">
+                    <option value="ISO">ISO</option>
+                    <option value="ICS">ICS</option>
+                    <option value="ANSI">ANSI</option>
+                    <option value="FP2">FP2</option>
+                    <option value="FP1">FP1</option>
+                    <option value="M2ICS">M2ICS</option>
+                </select>
+                <button onclick="javascript:setConfiguration()">Set Active Device</button>
+                <asp:Button ID="Button1" runat="server" Text="Back" OnClick="BtnBack_Click" />
+                <label id="lblMessage"></label>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
 

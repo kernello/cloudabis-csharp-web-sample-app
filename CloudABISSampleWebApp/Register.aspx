@@ -6,28 +6,8 @@
 
 <head id="Head1" runat="server">
     <title>Register</title>
-    <link rel="Stylesheet" type="text/css" href="style.css" />
+    <link rel="Stylesheet" type="text/css" href="Script/Style.css" />
 
-
-    <style type="text/css">
-        .auto-style1 {
-            width: 157px;
-        }
-
-        .auto-style2 {
-            width: 471px;
-        }
-
-        .auto-style3 {
-            width: 376px;
-        }
-
-        .centerBlock {
-            margin-left: auto;
-            margin-right: auto;
-            width: 576px;
-        }
-    </style>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
     <script src="Script/CloudABIS-ScanR.js"></script>
     <script src="Scripts/jquery-1.10.2.js" type="text/javascript"></script>
@@ -81,10 +61,9 @@
         }
 
         /*
-                 * Hnadle capture data
-                 */
+         * Hnadle capture data
+         */
         function CaptureResult(captureResponse) {
-
             debugger
             if (captureResponse.CloudScanrStatus != null && captureResponse.CloudScanrStatus.Success) {
 
@@ -106,96 +85,35 @@
                 document.getElementById('<%= serverResult.ClientID %>').innerHTML = captureResponse;
             }
         }
-
     </script>
 
 </head>
 <body style="background-color: ButtonHighlight">
-    <form id="form1" runat="server">
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <div>
-            <table cellpadding="0px" cellspacing="0px" align="center">
+    <div class="formWrapper">
+        <form id="form1" runat="server" class="commonForm registerForm">
+            <h1 class="headline">Registration</h1>
+            <div class="mt-10">
+                <label>Capture Type:</label>
+                <select name="captureType" id="captureType">
+                    <option value="SingleCapture">Single Capture</option>
+                    <option value="DoubleCapture">Double Capture</option>
+                </select>
+            </div>
+            <div>
+                <label for="registrationID">Registration ID</label>
+                <asp:TextBox ID="txtRegID" runat="server"></asp:TextBox>
+            </div>
+            <div>
+                <label class="currentDeviceCaption">Current Device Name:</label><asp:Label ID="lblCurrentDeviceName" runat="server" Text="..."></asp:Label>
+                <input type="button" value="BioMetric Capture" onclick="captureBiometric()" />
+                <asp:Button ID="btnSubmit" runat="server" Text="Register" Enabled="true" OnClick="btnRegister_Click" />
+                <asp:Button ID="Button1" runat="server" Text="Back" OnClick="BtnBack_Click" />
+                &nbsp;<asp:Label ID="serverResult" runat="server" Text=""></asp:Label>
 
-                <tr>
-                    <td class="auto-style3">
-                        <fieldset style="width: 350px;">
-
-                            <table cellpadding="3px" cellspacing="0">
-
-                                <tr>
-                                    <td class="auto-style1">CaptureType
-                                    </td>
-                                    <td>
-
-                                        <select id="captureType">
-                                            <option value="SingleCapture">SingleCapture</option>
-                                            <option value="DoubleCapture">DoubleCapture</option>
-
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="auto-style1">Registration ID
-                                    </td>
-                                    <td>
-                                        <asp:TextBox ID="txtRegID" Width="276px" runat="server"></asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="auto-style1">Current Device Name
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lblCurrentDeviceName" runat="server" Text="..."></asp:Label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="button" value="BioMetric Capture" onclick="captureBiometric()" />
-                                    </td>
-                                    <td>
-                                        <asp:Button ID="btnSubmit" runat="server" Text="Register" Enabled="true" OnClick="btnRegister_Click" />
-                                    </td>
-                                </tr>
-                                <tr>
-
-                                    <td>
-                                        <fieldset style="width: 350px;">
-                                            <asp:Button ID="Button1" runat="server" Text="Back" OnClick="BtnBack_Click" />
-                                            &nbsp;<asp:Label ID="serverResult" runat="server" Text="..."></asp:Label>
-                                        </fieldset>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <asp:TextBox Width="350px" ID="fileStaveStatus" runat="server" Visible="false" TextMode="MultiLine" Text="Captured Template save at">
-
-                                        </asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <asp:TextBox ID="templateXML" runat="server" CssClass="pagetitleValue" Style="display: none;" TextMode="MultiLine" Text="" Height="263px" Width="663px"></asp:TextBox>
-                                    </td>
-                                </tr>
-                            </table>
-                        </fieldset>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <br />
-        <br />
-        <br />
-
-    </form>
+                <asp:TextBox Width="350px" ID="fileStaveStatus" runat="server" Visible="false" TextMode="MultiLine" Text="Captured Template save at"></asp:TextBox>
+            </div>
+             <asp:TextBox ID="templateXML" runat="server" CssClass="pagetitleValue" Style="display: none;" TextMode="MultiLine" Text="" Height="263px" Width="663px"></asp:TextBox>
+        </form>
+    </div>
 </body>
 </html>
-
