@@ -92,8 +92,10 @@ const EnumDevices = {
     "TwoPrintWatsonMini": "TwoPrintWatsonMini",
     "TenPrintWatsonMini": "TenPrintWatsonMini",
     "HitachiFV": "HitachiFV",
-    "CMitech": "CMitech",
-    "FuseID": "FuseID"
+    "EMX30": "EMX30",
+    "FuseID": "FuseID",
+    "TD100": "TD100",
+    "EF45": "EF45"
 }
 /*
 /* LeftThumb, LeftIndex, LeftMiddle, LeftPing, LeftRing, RightThumb, RightIndex, RightMiddle, RightPing, RightRing
@@ -267,7 +269,7 @@ function IrisCapture(deviceName, captureTimeout, hasFace, callback) {
         }),
         success: function (ret) {
             var res = JSON.parse(JSON.stringify(ret));
-            console.log('CaptureStatus: ' + res.Message);
+            //console.log('CaptureStatus: ' + res.Message);
             callback(res);
         },
         error: function (xhr, status, error) {
@@ -296,7 +298,7 @@ function FaceCapture(quickScan, captureTimeout, isFaceSkip, faceImageFormat, cap
         url: uri,
         async: true,
         data: JSON.stringify({
-            "QuickScan": quickScan, "HasFaceSkip": isFaceSkip, "CaptureTimeOut": captureTimeout,
+            "DeviceName":"Face","QuickScan": quickScan, "HasFaceSkip": isFaceSkip, "CaptureTimeOut": captureTimeout,
             "FaceImageFormat": faceImageFormat, "CaptureOperationName": captureOperationName
         }),
         success: function (ret) {

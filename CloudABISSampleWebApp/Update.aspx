@@ -9,8 +9,8 @@
     <link rel="Stylesheet" type="text/css" href="Script/Style.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
     <script src="Script/CloudABIS-ScanR.js"></script>
-    <script src="Scripts/jquery-1.10.2.js" type="text/javascript"></script>
-    <script src="Scripts/bootstrap.js" type="text/javascript"></script>
+    <script src="Script/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="Script/bootstrap.js" type="text/javascript"></script>
 
     <script type="text/javascript">
 
@@ -44,7 +44,7 @@
             else if (engineName == EnumEngines.FingerVein)
                 FingerVeinCapture(deviceName, quickScan, captureType, 180.0, EnumCaptureOperationName.IDENTIFY, CaptureResult);
             else if (engineName == EnumEngines.Iris)
-                IrisCapture(deviceName, quickScan, 180.0, EnumFeatureMode.Disable, CaptureResult);
+                IrisCapture(deviceName, 180.0, EnumFeatureMode.Disable, CaptureResult);
             else if (engineName == EnumEngines.Face)
                 FaceCapture(quickScan, 180.0, EnumFeatureMode.Disable, EnumFaceImageFormat.Jpeg, EnumCaptureOperationName.IDENTIFY, CaptureResult);
         }
@@ -68,14 +68,13 @@
             debugger
             if (captureResponse.CloudScanrStatus != null && captureResponse.CloudScanrStatus.Success) {
 
-                if (captureResponse.BioImageData != null && captureResponse.BioImageData.length > 0) {
-                    document.getElementById('templateXML').value = captureResponse.BioImageData;
+                if (captureResponse.TemplateData != null && captureResponse.TemplateData.length > 0) {
+                    document.getElementById('templateXML').value = captureResponse.TemplateData;
                 }
                 else if (engineName == 'IRIS01' && captureResponse.BioImageData != null && captureResponse.BioImageData.length > 0) {
                     document.getElementById('templateXML').value = captureResponse.BioImageData;
                 }
                 else {
-                    document.getElementById('lblTemplate').style.display = 'none';
                     document.getElementById('templateXML').style.display = 'none';
                 }
                 document.getElementById('<%= serverResult.ClientID %>').innerHTML = "Capture success. Please click on identify button";
