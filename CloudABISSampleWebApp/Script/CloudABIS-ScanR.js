@@ -298,7 +298,7 @@ function FaceCapture(quickScan, captureTimeout, isFaceSkip, faceImageFormat, cap
         url: uri,
         async: true,
         data: JSON.stringify({
-            "QuickScan": quickScan, "HasFaceSkip": isFaceSkip, "CaptureTimeOut": captureTimeout,
+            "DeviceName":"Face","QuickScan": quickScan, "HasFaceSkip": isFaceSkip, "CaptureTimeOut": captureTimeout,
             "FaceImageFormat": faceImageFormat, "CaptureOperationName": captureOperationName
         }),
         success: function (ret) {

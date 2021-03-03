@@ -111,6 +111,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Script\bootstrap.js" />
     <Content Include="Script\CloudABIS-ScanR.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -120,6 +121,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Script\jquery-1.10.2.js" />
     <Content Include="Script\Style.css" />
     <Content Include="Update.aspx" />
     <Content Include="Verify.aspx" />
