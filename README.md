@@ -6,7 +6,7 @@ Once you pull this repo, you need to configure your own CloudABIS credentails in
 # Product & Getting Started
 - [Product Page](https://www.m2sys.com/cloud-based-abis-automated-biometric-identification-system-api/)
 - [CloudABIS Demo Video](https://www.youtube.com/watch?v=fcjU5uq46dQ&utm_source=Youtube+&utm_medium=Cloud+Biometric+Software&utm_campaign=CloudABIS+Drip+)
-- [Getting Started Documentation](https://identity.cloudapper.com/doc)
+- [Getting Started Documentation](https://identity.cloudabis.com/doc)
 
 # Video Tutorials on CloudABIS Integration
  - [CloudABIS Tutorial - Integrate with C#](https://www.youtube.com/watch?v=2XEi04yGVx8&feature=emb_logo)
@@ -21,5 +21,5 @@ Once you pull this repo, you need to configure your own CloudABIS credentails in
  - [FingerVein](https://fvsvr101.cloudabis.com/v1/Help)
 
 # Supported Biometric Devices
- - https://identity.cloudapper.com/device
+ - https://identity.cloudabis.com/device
 
