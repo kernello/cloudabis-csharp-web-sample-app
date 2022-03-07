@@ -25,9 +25,9 @@
             document.getElementById('templateXML').style.display = 'none';
             document.getElementById('<%= serverResult.ClientID %>').innerHTML = '';
 
-            var deviceName = getCookieValue("CSDeviceName");
-            var templateFormat = getCookieValue("CSTempalteFormat");
-            engineName = getCookieValue("CABEngineName");
+            var deviceName = getCookieValue("CSDeviceNamev10");
+            var templateFormat = getCookieValue("CSTempalteFormatv10");
+            engineName = getCookieValue("CABEngineNamev10");
             document.getElementById('<%=lblCurrentDeviceName.ClientID%>').innerHTML = deviceName;
 
             var apiPath = "http://localhost:15896/";

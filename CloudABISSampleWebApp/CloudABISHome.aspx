@@ -37,7 +37,7 @@
     <div class="container">
         <form id="form1" runat="server">
             <div class="homeContainer">
-                <h1 class="headline">Welcome To CloudABIS web application</h1>
+                <h1 class="headline">Welcome To CloudABIS v10 web application</h1>
                 <div><asp:LinkButton ID="LinkButton1" runat="server" OnClick="lnkIsRegistered_Click">IsRegistered</asp:LinkButton></div>
                 <div><asp:LinkButton ID="LinkChangeID" runat="server" OnClick="lnkChangeID_Click">ChangeID</asp:LinkButton></div>
                 <div><asp:LinkButton ID="LinkButton2" runat="server" OnClick="lnkDeleteID_Click">DeleteID</asp:LinkButton></div>
@@ -45,7 +45,7 @@
                 <div><asp:LinkButton ID="LinkIdentify" runat="server" OnClick="lnkIdentify_Click">Identify</asp:LinkButton></div>
                 <div><asp:LinkButton ID="LinkVerify" runat="server" OnClick="lnkVerify_Click">Verify</asp:LinkButton></div>
                 <div><asp:LinkButton ID="LinkUpdate" runat="server" OnClick="lnkUpdate_Click">Update</asp:LinkButton></div>
-                <div><asp:LinkButton ID="linkAuthenticate" runat="server" OnClick="lnkChangeActiveDevice_Click">Change Active Device</asp:LinkButton></div>
+                <div><asp:LinkButton ID="linkAuthenticate" runat="server" OnClick="lnkChangeActiveDevice_Click">Change App Settings</asp:LinkButton></div>
                 <div><asp:Label ID="lblStatus" runat="server" Visible="true" Text="Server Status: "></asp:Label></div>
             </div>
         </form>

@@ -25,7 +25,7 @@ namespace CloudABISSampleWebApp
         {
             try
             {
-                return Request.Cookies["CABEngineName"].Value.ToString();
+                return Request.Cookies["CABEngineNamev10"].Value.ToString();
             }
             catch (Exception)
             {
@@ -37,7 +37,7 @@ namespace CloudABISSampleWebApp
         {
             try
             {
-                return Request.Cookies["CSTempalteFormat"].Value.ToString();
+                return Request.Cookies["CSTempalteFormatv10"].Value.ToString();
             }
             catch (Exception)
             {
@@ -66,7 +66,7 @@ namespace CloudABISSampleWebApp
                     }
                     else
                     {
-                        Response.Redirect("ActiveDevice.aspx");
+                        Response.Redirect("AppConfiguration.aspx");
                     }
                 }
                 else if (string.IsNullOrEmpty(updateID))

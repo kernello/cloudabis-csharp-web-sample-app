@@ -41,7 +41,7 @@ namespace CloudABISSampleWebApp
                     }
                     else
                     {
-                        Response.Redirect("ActiveDevice.aspx");
+                        Response.Redirect("AppConfiguration.aspx");
                     }
                 }
                 else lblMessage.Text = "Please give Delete ID";
