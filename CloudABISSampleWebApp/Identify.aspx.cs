@@ -26,7 +26,7 @@ namespace CloudABISSampleWebApp
         {
             try
             {
-                return Request.Cookies["CSTempalteFormat"].Value.ToString();
+                return Request.Cookies["CSTempalteFormatv10"].Value.ToString();
             }
             catch (Exception)
             {
@@ -53,7 +53,7 @@ namespace CloudABISSampleWebApp
                     }
                     else
                     {
-                        Response.Redirect("ActiveDevice.aspx");
+                        Response.Redirect("AppConfiguration.aspx");
                     }
                 }
                 else
